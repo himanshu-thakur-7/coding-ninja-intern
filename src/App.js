@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./styles/app.css";
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import ShowCase from "./components/ShowCase";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className=' bg-gray-200 font-body'
+      style={{ fontFamily: "mulish", height: "200vh" }}
+    >
+      <Header />
+      <div className='ml-0  xl:ml-36 mr-0  xl:mr-36 bg-gray-50'>
+        <Banner />
+        <ShowCase />
+      </div>
     </div>
   );
 }
