@@ -3,7 +3,7 @@ import EventBar from "./EventBar";
 import TimeLineBar from "./TimeLineBar";
 import TagsArea from "./TagsArea";
 import MainArea from "./MainArea";
-
+import { FilterProvider } from "./context/Filters";
 function ShowCase() {
   return (
     <div
@@ -15,12 +15,14 @@ function ShowCase() {
         minHeight: "100%",
       }}
     >
-      <EventBar />
-      <TimeLineBar />
-      <div className='flex '>
-        <MainArea />
-        <TagsArea />
-      </div>
+      <FilterProvider>
+        <EventBar />
+        <TimeLineBar />
+        <div className='flex '>
+          <MainArea />
+          <TagsArea />
+        </div>
+      </FilterProvider>
     </div>
   );
 }
