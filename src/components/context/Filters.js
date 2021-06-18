@@ -4,9 +4,9 @@ export const FilterContext = createContext();
 
 export const FilterProvider = (props) => {
   const [filters, updateFilters] = useState({
-    event: "",
-    timeLine: "",
-    tagsList: [],
+    event: "ACTIVITIES",
+    timeLine: "Archived",
+    tagsList: ["Contest Solutions"],
   });
   return (
     <FilterContext.Provider value={[filters, updateFilters]}>

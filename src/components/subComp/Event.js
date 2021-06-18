@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { FilterContext } from "../context/Filters";
+
 import {
   CalendarIcon,
   DesktopComputerIcon,
@@ -6,15 +8,15 @@ import {
   AcademicCapIcon,
   GlobeAltIcon,
 } from "@heroicons/react/outline";
-class Event extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      isSelected: false,
-    };
-  }
-  renderIcon(icon) {
+const Event = (props) => {
+  const [isSelected, setStatus] = useState(false);
+  const [Filters, updateFilters] = useContext(FilterContext);
+  const event = Filters.event;
+  useEffect(() => {
+    setStatus(event === props.apiString);
+  }, [Filters]);
+  const renderIcon = (icon) => {
     switch (icon) {
       case "calendar":
         return (
@@ -42,39 +44,45 @@ class Event extends Component {
       default:
         break;
     }
-  }
+  };
 
-  toggleSelect = (e) => {
-    const { isSelected } = this.state;
-
+  const toggleSelect = (e) => {
     let setVal = true;
     if (isSelected) {
       setVal = false;
     }
 
-    this.setState({ isSelected: setVal });
-    console.log(isSelected);
-    console.log(this.props.children);
-    this.props.isSelected(this.props.apiString, this.props.string, setVal);
+    setStatus(setVal);
+
+    updateFilters((prevFilters) => ({
+      ...prevFilters,
+      event: props.apiString,
+    }));
   };
 
-  render() {
-    return (
+  return (
+    <div
+      className='sm:pl-4 pr-4 flex items-center cursor-pointer'
+      onClick={toggleSelect}
+    >
       <div
-        className='sm:pl-4 pr-4 flex cursor-pointer'
-        onClick={this.toggleSelect.bind(this)}
         style={{
-          backgroundColor: this.state.isSelected
-            ? "rgb(255,255,255)"
-            : "rgb(234,200,50)",
+          color: isSelected ? "rgb(250,115,40)" : "rgb(158,158,158)",
         }}
       >
-        <div> {this.renderIcon(this.props.icon)} </div>
-        <p>{this.props.name}</p>
+        {renderIcon(props.icon)}
       </div>
-    );
-  }
-}
+      <p
+        style={{
+          color: isSelected ? "rgb(250,115,40)" : "rgb(158,158,158)",
+        }}
+      >
+        {props.name}
+      </p>
+    </div>
+  );
+};
+
 export default Event;
 
 // {

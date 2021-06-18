@@ -20,17 +20,19 @@ class Tag extends Component {
   };
   render() {
     return (
-      <li
-        className=' bg-yellow-400  mt-2 mb-2 p-4 cursor-pointer'
+      <div
+        className=' mt-2 mb-2 p-4 cursor-pointer'
         onClick={this.toggleSelection}
         style={{
+          fontSize: "14px",
           backgroundColor: this.state.isSelected
-            ? "rgb(255,255,255)"
-            : "yellow",
+            ? "rgb(250,115,40)"
+            : "rgb(238,238,238)",
+          color: this.state.isSelected ? "rgb(255,255,255)" : "rgb(66,66,66)",
         }}
       >
         {this.props.name}
-      </li>
+      </div>
     );
   }
 }

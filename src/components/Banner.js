@@ -21,14 +21,14 @@ function Banner() {
         <div
           className=' text-white text-8xl font-black  mt-4 font-mulish'
           style={{
-            fontWeight: "900",
-            fontSize: "5vh",
+            fontWeight: "700",
+            fontSize: "7vh",
           }}
         >
           Events & News
         </div>
         <div
-          className=' text-white  text-lg mt-4  pb-16'
+          className=' text-white  text-lg mt-2  pb-16 ml-1'
           style={{
             fontWeight: "700",
           }}

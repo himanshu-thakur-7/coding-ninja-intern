@@ -9,7 +9,6 @@ function ShowCase() {
     <div
       style={{
         margin: "5% 10%",
-        backgroundColor: "rgb(255,0,0)",
         height: "100%",
         height: "auto !important",
         minHeight: "100%",

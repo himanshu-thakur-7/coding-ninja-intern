@@ -1,46 +1,20 @@
-import React, {  useContext } from "react";
+import React from "react";
 import SubCat from "./subComp/SubCat";
-import { FilterContext } from "./context/Filters";
 
 const TimeLineBar = () => {
-  const [Filter, updateFilters] = useContext(FilterContext);
-
-  const toggleTimeLineEntry = (tlName, isSelected) => {
-    let TLine = Filter.timeLine;
-    if (isSelected) {
-      TLine = tlName;
-    } else {
-      TLine = "";
-    }
-    updateFilters((prevFilters) => ({
-      ...prevFilters,
-      timeLine: TLine,
-    }));
-    console.log(TLine);
-  };
-
   return (
-    <div className='flex justify-around pt-2 pb-2 bg-blue-300'>
-      <SubCat
-        name='Upcoming'
-        icon='future'
-        apiString='Upcoming'
-        isSelected={toggleTimeLineEntry}
-      />
+    <div
+      className='flex justify-around pt-2 pb-2  p-4 text-xl'
+      style={{
+        backgroundColor: "rgb(242,242,242)",
+        borderBottom: "solid 2px rgb(235,235,235)",
+      }}
+    >
+      <SubCat name='Upcoming' icon='future' apiString='Upcoming' />
 
-      <SubCat
-        name='Archived'
-        icon='past'
-        apiString='Archived'
-        isSelected={toggleTimeLineEntry}
-      />
+      <SubCat name='Archived' icon='past' apiString='Archived' />
 
-      <SubCat
-        name='All Time'
-        icon='fav'
-        apiString='All Time Favorites'
-        isSelected={toggleTimeLineEntry}
-      />
+      <SubCat name='All Time' icon='fav' apiString='All Time Favorites' />
     </div>
   );
 };
