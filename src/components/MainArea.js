@@ -41,7 +41,7 @@ const MainArea = () => {
   }, [Filter]);
 
   return (
-    <div className='grid grid-flow-row-dense mx-auto '>
+    <div className='grid grid-flow-row-dense  lg:grid-cols-1 xl:grid-cols-2  mx-auto'>
       {Itemdata.map(
         ({
           id,
@@ -52,6 +52,7 @@ const MainArea = () => {
           event_end_time,
           registration_start_time,
           registration_end_time,
+          start_time,
           venue,
           fees,
           registration_status,
@@ -68,6 +69,7 @@ const MainArea = () => {
             event_end_time={event_end_time}
             registration_start_time={registration_start_time}
             registration_end_time={registration_end_time}
+            start_time={start_time}
             venue={venue}
             fees={fees}
             registration_status={registration_status}

@@ -12,6 +12,7 @@ function ShowCase() {
         height: "100%",
         height: "auto !important",
         minHeight: "100%",
+        border: "3px solid rgb(230,230,230)",
       }}
     >
       <FilterProvider>
