@@ -3,37 +3,24 @@ import moment from "moment";
 import CardTag from "./CardTag";
 import Avatar from "./Avatar";
 function Item({
-  id,
   name,
   short_desc,
   cover_picture,
-  event_start_time,
-  event_end_time,
-  registration_start_time,
-  registration_end_time,
   start_time,
   venue,
   fees,
-  registration_status,
   registered_users,
   card_tags,
   end_time,
+  mobile_cover_picture,
 }) {
   const { other_users_count, show_users_count, top_users } = registered_users;
   const is_upcoming = moment.now() - end_time * 1000 < 0;
 
   console.log(is_upcoming);
   const convertUnixToDate = (unixTime) => {
-    // var s = new Date(unixTime)
-    // var formatted = s.format("dd.mm.yyyy hh:MM")
-
     var dateString = moment.unix(unixTime).format("hh:mm A, d MMM yyyy ");
-    // console.log(card_tags);
-    // console.log(top_users);
-    // console.log(other_users_count);
-    // console.log(show_users_count);
     return dateString;
-    // console.log(s);
   };
   return (
     <div
@@ -44,8 +31,9 @@ function Item({
     >
       <img
         src={cover_picture}
-        height={800}
-        className='object-cover'
+        srcSet={`${mobile_cover_picture} 300w`}
+        height={600}
+        className=' object-center'
         style={{ height: "24vh " }}
       />
       <div className='pt-4 pl-4 pr-6'>

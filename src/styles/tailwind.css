@@ -6,7 +6,7 @@
 
 @layer components {
     .link {
-        @apply cursor-pointer hover:underline;
+        @apply cursor-pointer hover:underline hover:text-orange400;
     }
     
 }

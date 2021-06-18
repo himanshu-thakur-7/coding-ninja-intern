@@ -49,17 +49,13 @@ const MainArea = () => {
             name,
             short_desc,
             cover_picture,
-            event_start_time,
-            event_end_time,
-            registration_start_time,
-            registration_end_time,
             start_time,
             venue,
             fees,
-            registration_status,
             registered_users,
             card_tags,
             end_time,
+            mobile_cover_picture,
           }) => (
             <Item
               key={id}
@@ -67,17 +63,13 @@ const MainArea = () => {
               name={name}
               short_desc={short_desc}
               cover_picture={cover_picture}
-              event_start_time={event_start_time}
-              event_end_time={event_end_time}
-              registration_start_time={registration_start_time}
-              registration_end_time={registration_end_time}
               start_time={start_time}
               venue={venue}
               fees={fees}
-              registration_status={registration_status}
               registered_users={registered_users}
               card_tags={card_tags}
               end_time={end_time}
+              mobile_cover_picture={mobile_cover_picture}
             />
           )
         )
