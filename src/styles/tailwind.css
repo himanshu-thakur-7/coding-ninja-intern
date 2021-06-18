@@ -6,8 +6,7 @@
 
 @layer components {
     .link {
-        @apply cursor-pointer hover:underline hover:text-orange400;
-    }
+        @apply cursor-pointer hover:underline     }
     
 }
 .font-mulish {
