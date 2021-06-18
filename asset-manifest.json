@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/coding-ninja-intern/static/css/main.f5e8bb75.chunk.css",
+    "main.js": "/coding-ninja-intern/static/js/main.86ba0c15.chunk.js",
+    "main.js.map": "/coding-ninja-intern/static/js/main.86ba0c15.chunk.js.map",
+    "runtime-main.js": "/coding-ninja-intern/static/js/runtime-main.dd4ac5bb.js",
+    "runtime-main.js.map": "/coding-ninja-intern/static/js/runtime-main.dd4ac5bb.js.map",
+    "static/js/2.ae3c04bb.chunk.js": "/coding-ninja-intern/static/js/2.ae3c04bb.chunk.js",
+    "static/js/2.ae3c04bb.chunk.js.map": "/coding-ninja-intern/static/js/2.ae3c04bb.chunk.js.map",
+    "static/js/3.8aec8208.chunk.js": "/coding-ninja-intern/static/js/3.8aec8208.chunk.js",
+    "static/js/3.8aec8208.chunk.js.map": "/coding-ninja-intern/static/js/3.8aec8208.chunk.js.map",
+    "index.html": "/coding-ninja-intern/index.html",
+    "static/css/main.f5e8bb75.chunk.css.map": "/coding-ninja-intern/static/css/main.f5e8bb75.chunk.css.map",
+    "static/js/2.ae3c04bb.chunk.js.LICENSE.txt": "/coding-ninja-intern/static/js/2.ae3c04bb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd4ac5bb.js",
+    "static/js/2.ae3c04bb.chunk.js",
+    "static/css/main.f5e8bb75.chunk.css",
+    "static/js/main.86ba0c15.chunk.js"
+  ]
+}
