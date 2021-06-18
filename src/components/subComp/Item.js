@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import CardTag from "./CardTag";
+import Avatar from "./Avatar";
 function Item({
   id,
   name,
@@ -16,18 +17,27 @@ function Item({
   registration_status,
   registered_users,
   card_tags,
+  end_time,
 }) {
+  const { other_users_count, show_users_count, top_users } = registered_users;
+  const is_upcoming = moment.now() - end_time * 1000 < 0;
+
+  console.log(is_upcoming);
   const convertUnixToDate = (unixTime) => {
     // var s = new Date(unixTime)
     // var formatted = s.format("dd.mm.yyyy hh:MM")
+
     var dateString = moment.unix(unixTime).format("hh:mm A, d MMM yyyy ");
-    console.log(card_tags);
+    // console.log(card_tags);
+    // console.log(top_users);
+    // console.log(other_users_count);
+    // console.log(show_users_count);
     return dateString;
     // console.log(s);
   };
   return (
     <div
-      className='flex flex-col m-5 bg-white z-10 overflow-hidden cursor-pointer'
+      className='flex flex-col m-5 bg-white z-10 overflow-hidden cursor-pointer shadow-lg'
       style={{
         backgroundColor: "white",
       }}
@@ -36,7 +46,7 @@ function Item({
         src={cover_picture}
         height={800}
         className='object-cover'
-        style={{ height: "24vh" }}
+        style={{ height: "24vh " }}
       />
       <div className='pt-4 pl-4 pr-6'>
         <h4>{name}</h4>
@@ -81,6 +91,36 @@ function Item({
           </div>
         </div>
         <hr className='w-full mt-4 h-0.5' />
+        <div className='Footer'>
+          {show_users_count ? (
+            <div className='Users menu'>
+              <div className='flex'>
+                {top_users.map((top_user, index) => {
+                  // console.log(top_user);
+                  return (
+                    <Avatar
+                      name={top_user.name}
+                      img_url={top_user.image_url}
+                      key={index}
+                    ></Avatar>
+                  );
+                })}
+              </div>
+              <h4>and {other_users_count} others registered</h4>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </div>
+      <div className='mb-5'>
+        {is_upcoming ? (
+          <div className='float-right'>
+            <img src='./images/register.png' alt='' height={150} width={150} />
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

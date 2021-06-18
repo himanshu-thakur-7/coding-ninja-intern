@@ -42,7 +42,13 @@ const SubCat = (props) => {
   };
 
   return (
-    <div className='flex items-center cursor-pointer' onClick={toggleSelection}>
+    <div
+      className='flex items-center cursor-pointer'
+      onClick={toggleSelection}
+      style={{
+        padding: "0px 20px",
+      }}
+    >
       <p
         style={{
           color: isSelected ? "rgb(250,115,40)" : "rgb(158,158,158)",

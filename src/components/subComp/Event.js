@@ -64,6 +64,9 @@ const Event = (props) => {
     <div
       className='sm:pl-4 pr-4 flex items-center cursor-pointer'
       onClick={toggleSelect}
+      style={{
+        padding: "0px 20px",
+      }}
     >
       <div
         style={{

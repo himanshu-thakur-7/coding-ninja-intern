@@ -4,7 +4,7 @@ import SubCat from "./subComp/SubCat";
 const TimeLineBar = () => {
   return (
     <div
-      className='flex justify-around pt-2 pb-2  p-4 text-xl'
+      className='flex lg:justify-evenly overflow-auto  overflow-y-hidden whitespace-nowrap w-full p-4 text-2xl'
       style={{
         backgroundColor: "rgb(242,242,242)",
         borderBottom: "solid 2px rgb(235,235,235)",

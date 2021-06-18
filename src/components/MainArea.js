@@ -42,41 +42,49 @@ const MainArea = () => {
 
   return (
     <div className='grid grid-flow-row-dense  lg:grid-cols-1 xl:grid-cols-2  mx-auto'>
-      {Itemdata.map(
-        ({
-          id,
-          name,
-          short_desc,
-          cover_picture,
-          event_start_time,
-          event_end_time,
-          registration_start_time,
-          registration_end_time,
-          start_time,
-          venue,
-          fees,
-          registration_status,
-          registered_users,
-          card_tags,
-        }) => (
-          <Item
-            key={id}
-            id={id}
-            name={name}
-            short_desc={short_desc}
-            cover_picture={cover_picture}
-            event_start_time={event_start_time}
-            event_end_time={event_end_time}
-            registration_start_time={registration_start_time}
-            registration_end_time={registration_end_time}
-            start_time={start_time}
-            venue={venue}
-            fees={fees}
-            registration_status={registration_status}
-            registered_users={registered_users}
-            card_tags={card_tags}
-          />
+      {Itemdata.length > 0 ? (
+        Itemdata.map(
+          ({
+            id,
+            name,
+            short_desc,
+            cover_picture,
+            event_start_time,
+            event_end_time,
+            registration_start_time,
+            registration_end_time,
+            start_time,
+            venue,
+            fees,
+            registration_status,
+            registered_users,
+            card_tags,
+            end_time,
+          }) => (
+            <Item
+              key={id}
+              id={id}
+              name={name}
+              short_desc={short_desc}
+              cover_picture={cover_picture}
+              event_start_time={event_start_time}
+              event_end_time={event_end_time}
+              registration_start_time={registration_start_time}
+              registration_end_time={registration_end_time}
+              start_time={start_time}
+              venue={venue}
+              fees={fees}
+              registration_status={registration_status}
+              registered_users={registered_users}
+              card_tags={card_tags}
+              end_time={end_time}
+            />
+          )
         )
+      ) : (
+        <div className='flex justify-items-center items-center ml-10'>
+          <h1>No events found with the selected tags</h1>
+        </div>
       )}
     </div>
   );
